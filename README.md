@@ -27,7 +27,7 @@ python main.py domains.xlsx
 ## Construído com
 - [Selenium](https://pypi.org/project/selenium/) - Biblioteca usada para automatizar o navegador
 - [Xlrd](https://xlrd.readthedocs.io/en/latest/) - Biblioteca usada para ler/escrever arquivos Excel
-- [Beautifil Soup] (https://beautiful-soup-4.readthedocs.io/en/latest/) - Biblioteca usada para extrair dados de arquivos HTML e XML
+- [Beautifil Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) - Biblioteca usada para extrair dados de arquivos HTML e XML
 
 ## Autores
 - Ranner de Paula - [GitHub](https://github.com/rannerdepaula)
