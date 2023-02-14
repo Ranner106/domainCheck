@@ -30,4 +30,4 @@ python main.py domains.xlsx
 - [Beautifil Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) - Biblioteca usada para extrair dados de arquivos HTML e XML
 
 ## Autores
-- Ranner de Paula - [GitHub](https://github.com/rannerdepaula)
+- Ranner de Paula - [GitHub](https://github.com/Ranner106)
