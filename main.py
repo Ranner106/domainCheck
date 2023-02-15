@@ -36,6 +36,7 @@ def make_chrome_browser(*options: str) -> webdriver.Chrome:
 
     return browser
 
+arq = open('domainsResult.txt', 'w')
 dominios = []
 #lendo do excel
 workbook = xlrd.open_workbook('dominio.xls')
@@ -67,7 +68,9 @@ if __name__ == '__main__':
         search_input.send_keys(Keys.RETURN)
         sleep(TIME_TO_WAIT)
         results = browser.find_elements(By.TAG_NAME, 'strong')
-        print("Domínio %s %s" % (dominio, results[4].text))
+        texto = "Domínio %s %s\n" % (dominio, results[4].text)
+        arq.write(texto)
 
+    arq.close()
     # Dorme por 10 segundos
     sleep(TIME_TO_WAIT)
