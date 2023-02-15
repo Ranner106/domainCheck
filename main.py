@@ -35,6 +35,8 @@ def make_chrome_browser(*options: str) -> webdriver.Chrome:
 
     return browser
 
+dominio = 'google.com.br'
+
 if __name__ == '__main__':
     TIME_TO_WAIT = 10
     # Example
@@ -52,8 +54,12 @@ if __name__ == '__main__':
     )
 
     search_input.clear()
-    search_input.send_keys('geniuxdevelopers.com.br')
+    search_input.send_keys(dominio)
     search_input.send_keys(Keys.RETURN)
+    sleep(TIME_TO_WAIT)
+
+    results = browser.find_elements(By.TAG_NAME, 'strong')
+    print("Domínio %s %s" % (dominio, results[4].text))
 
     # Dorme por 10 segundos
     sleep(TIME_TO_WAIT)
