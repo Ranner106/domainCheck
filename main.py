@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+import xlrd
 
 
 # Caminho para a raiz do projeto
@@ -35,10 +36,17 @@ def make_chrome_browser(*options: str) -> webdriver.Chrome:
 
     return browser
 
-dominio = 'google.com.br'
+dominios = []
+#lendo do excel
+workbook = xlrd.open_workbook('dominio.xls')
+sheet = workbook.sheet_by_index(0)
+
+for linha in range(0,10):
+    dominios.append(sheet.cell_value(linha,0))
+
 
 if __name__ == '__main__':
-    TIME_TO_WAIT = 10
+    TIME_TO_WAIT = 5
     # Example
     # options = '--headless', '--disable-gpu',
     options = ()
@@ -47,19 +55,19 @@ if __name__ == '__main__':
     # Como antes
     browser.get('https://registro.br/')
 
-    search_input = WebDriverWait(browser, TIME_TO_WAIT).until(
+   
+    for dominio in dominios:
+        search_input = WebDriverWait(browser, TIME_TO_WAIT).until(
         EC.presence_of_element_located(
             (By.NAME, 'is-avail')
         )
-    )
-
-    search_input.clear()
-    search_input.send_keys(dominio)
-    search_input.send_keys(Keys.RETURN)
-    sleep(TIME_TO_WAIT)
-
-    results = browser.find_elements(By.TAG_NAME, 'strong')
-    print("Domínio %s %s" % (dominio, results[4].text))
+        )
+        search_input.clear()
+        search_input.send_keys(dominio)
+        search_input.send_keys(Keys.RETURN)
+        sleep(TIME_TO_WAIT)
+        results = browser.find_elements(By.TAG_NAME, 'strong')
+        print("Domínio %s %s" % (dominio, results[4].text))
 
     # Dorme por 10 segundos
     sleep(TIME_TO_WAIT)
