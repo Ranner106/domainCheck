@@ -1,5 +1,5 @@
  # Projeto de Raspagem de Dados com Python
-Este projeto tem como objetivo usar a linguagem Python para raspar dados e obter informações sobre domínios existentes no site registro.com.
+Este projeto tem como objetivo usar a linguagem Python para raspar dados e obter informações sobre domínios existentes no site registro.br
 
 ## Começando
 Estas instruções servirão para que você obtenha uma cópia deste projeto e a utilize em seu ambiente local.
