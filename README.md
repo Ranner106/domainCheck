@@ -8,13 +8,13 @@ Estas instruções servirão para que você obtenha uma cópia deste projeto e a
 Você precisará ter os seguintes componentes instalados:
 
 - Python 3.7 ou posterior
-- Bibliotecas python: selenium, xlrd, beautifil soup
+- Bibliotecas python: selenium, xlrd.
 
 ### Instalando
 Para instalar as dependências deste projeto, você pode executar o seguinte script no seu terminal:
 
 
-pip install -r requirements.txt
+python3 -m pip install -r dev-requirements.txt
 
 
 ### Executando
@@ -25,9 +25,8 @@ python main.py domains.xlsx
 
 
 ## Construído com
-- [Selenium](https://pypi.org/project/selenium/) - Biblioteca usada para automatizar o navegador
-- [Xlrd](https://xlrd.readthedocs.io/en/latest/) - Biblioteca usada para ler/escrever arquivos Excel
-- [Beautifil Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) - Biblioteca usada para extrair dados de arquivos HTML e XML
+- [Selenium](https://www.selenium.dev) - Biblioteca usada para automatizar o navegador
+- [Xlrd](http://www.python-excel.org/) - Biblioteca usada para ler/escrever arquivos Excel
 
 ## Autores
 - Ranner de Paula - [GitHub](https://github.com/Ranner106)
